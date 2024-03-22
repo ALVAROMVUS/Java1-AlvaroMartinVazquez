@@ -22,7 +22,7 @@ public class TestFecha {
  
         System.out.println("----------INICIO----------");
         System.out.println("Representacion de la fecha:");
-        System.out.println("LocalDate: " + fecha);
+        System.out.println("Fecha: " + fecha);
         System.out.println("LocalDate: " + localDate);
         System.out.println();
         
@@ -62,6 +62,17 @@ public class TestFecha {
         long diferenciaEnDiasLocalDate2 = ChronoUnit.DAYS.between(localDate, localDateRestada);
         System.out.println("Fecha.diferenciaEnDias(fechaSumada): " + diferenciaEnDias2);
         System.out.println("ChronoUnit.DAYS.between(localDate, localDateSumada): " + diferenciaEnDiasLocalDate2);
+        System.out.println();
+        
+//---------------DEFENSA-----------------
+        
+        System.out.println("Test de restar 13 dias a una fecha concreta (22-3-2024):");
+        Fecha fecha1 = Fecha.parse("2024-3-22");
+        LocalDate localDate1 = LocalDate.of(2024, 3, 22);
+        Fecha fechaRestada1 = fecha.restarDiasFechaDada(fecha1, 3);
+        LocalDate localDateRestada1 = localDate1.minusDays(3);
+        System.out.println("Fecha.restarDiasFechaDada(3): " + fechaRestada1);
+        System.out.println("LocalDate.minusDays(3): " + localDateRestada1);
         System.out.println();
     }
 }

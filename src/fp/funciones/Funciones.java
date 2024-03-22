@@ -68,19 +68,6 @@ public class Funciones {
         return lista.stream().max((s1, s2) -> s1.length() - s2.length()).orElse(null);
     }
 
-    public static int funcionP2(int n, int k, int i) {
-        if (n < k || i >= k + 1) {
-            throw new IllegalArgumentException();
-        }
-
-        int resultado = 1;
-        for (int producto = i; producto < k - 1; producto++) {
-            resultado *= n - i;
-        }
-        return resultado;
-    }
-
-
     public static int factorial(int num) {
         int factorial = 1;
         for (int i = 1; i <= num; i++) {
@@ -88,4 +75,48 @@ public class Funciones {
         }
         return factorial;
     }
+    
+  //DEFENSA ----------------------------------------
+    
+    public static int funcionP2(int n, int k, int i) {
+        if (n < k) {
+            throw new IllegalArgumentException("n debe ser mayor o igual que k.");
+        }
+        if (i >= (k + 1)) {
+            throw new IllegalArgumentException("i debe ser menor que k + 1.");
+        }
+        
+        int resultado = 1;
+        for (int producto = i; producto <= k - 2; producto++) {
+            resultado *= (n - i);
+        }
+        return resultado;
+    }
+    
+    public static int funcionC2(int n, int k) {
+        if (n <= k) {
+            throw new IllegalArgumentException("n debe ser mayor que k.");
+        }
+        int k1 = k + 1;
+        return combinatorio(n,k1);
+        		        		
+    }
+    
+    public static double funcionS2(int n, int k) {
+        if (k > n) {
+            throw new IllegalArgumentException("k debe ser menor o igual que n");
+        }
+        
+        double parte1 = factorial(k) / factorial(k+2);
+        double parte2 = 0;
+        
+        for (int i = 0; i <= k; i++) {
+            double suma = Math.pow(-1, i) * combinatorio(k, i) * Math.pow((k - i), n);
+            parte2 += suma;
+        }        
+        double resultado = parte1 * parte2;
+        return resultado;
+
+    }
+    
 }

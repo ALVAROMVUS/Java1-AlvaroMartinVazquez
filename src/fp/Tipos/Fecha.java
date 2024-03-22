@@ -159,6 +159,30 @@ public record Fecha(int año, int mes, int dia) implements Comparable<Fecha> {
             return dia - otraFecha.dia;
         }
     }
+    
+//DEFENSA ----------------------------------------
+    
+    public Fecha restarDiasFechaDada(Fecha fecha, int n) {
+        int diaActual = fecha.dia;
+        int mesActual = fecha.mes;
+        int añoActual = fecha.año;
+
+        while (n > 0) {
+            if (n >= diaActual) {
+                n -= diaActual;
+                mesActual--;
+                if (mesActual < 1) {
+                    mesActual = 12;
+                    añoActual--;
+                }
+                diaActual = Fecha.diasEnMes(añoActual, mesActual);
+            } else {
+                diaActual -= n;
+                n = 0;
+            }
+        }
+        return new Fecha(añoActual, mesActual, diaActual);
+    }
 
     @Override
     public String toString() {

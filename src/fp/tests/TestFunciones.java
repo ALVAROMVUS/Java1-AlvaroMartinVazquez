@@ -12,6 +12,9 @@ public class TestFunciones {
         testFormula();
         testDiferenciaValoresLista();
         testCadenaMasLarga();
+        testfuncionp2();
+        testfuncionc2();
+        testfuncions2();
     }
 
     public static void testEsPrimo() {
@@ -47,6 +50,31 @@ public class TestFunciones {
         System.out.println("Probando la funcion cadenaMasLarga:");
         List<String> lista = new ArrayList<>(Arrays.asList("Torremolinos", "Lisboa", "Calañas"));
         System.out.println("Cadena más larga: " + Funciones.cadenaMasLarga(lista));
+        System.out.println();
+    
+    }
+//DEFENSA--------------------------------
+    
+    public static void testfuncionp2() {
+        System.out.println("Probando la funcion P2:");
+        System.out.println("P2(7,2,2) = " + Funciones.funcionP2(7, 2,2));
+        System.out.println("P2(6,3,1) = " + Funciones.funcionP2(6, 3,1));
+        System.out.println();
+        
+    }
+    
+    public static void testfuncionc2() {
+        System.out.println("Probando la funcion C2:");
+        System.out.println("C2(10, 2) = " + Funciones.funcionC2(10, 2));
+        System.out.println("C2(6, 2) = " + Funciones.funcionC2(6, 2));
+        System.out.println();
+        
+    }
+    
+    public static void testfuncions2() {
+        System.out.println("Probando la funcion S2:");
+        System.out.println("S2(3, 2) = " + Funciones.funcionS2(4, 2));
+        System.out.println("S2(6, 2) = " + Funciones.funcionS2(4, 3));
         System.out.println();
     }
 }
