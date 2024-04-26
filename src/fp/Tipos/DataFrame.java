@@ -53,7 +53,8 @@ public interface DataFrame {
 	public static <R> R parse(String text, Class<R> type) {
 		return DataFrameImpl.parse(text, type);
 	}
-	
+
+
 	//
 	// Métodos imperativos o propiedades del tipo
 	List<String> columNames();

@@ -7,7 +7,6 @@ public class TestDataframe {
     public static void main(String[] args) {
     	
     	System.out.println("ARCHIVO PERSONAS: \n");
-        // Cargar el DataFrame desde el archivo CSV
         DataFrame d = DataFrame.parse("src/fp/ficheros/personas.csv", List.of("Nombre", "Apellido", "Edad", "Altura", "Fecha"));
         
         // Mostrar las diez primeras filas
@@ -45,7 +44,6 @@ public class TestDataframe {
         
     	System.out.println("ARCHIVO MASCOTAS: \n");
     	
-        // Cargar el DataFrame desde el archivo CSV
         DataFrame g = DataFrame.parse("src/fp/ficheros/mascotas.csv", List.of("IdMascota","Nombre","Especie","Sexo","Ubicacion","Estado"));
         
         // Mostrar las diez primeras filas
@@ -75,7 +73,6 @@ public class TestDataframe {
         
     	System.out.println("ARCHIVO PELICULAS: \n");
     	
-        // Cargar el DataFrame desde el archivo CSV
         DataFrame j = DataFrame.parse("src/fp/ficheros/pp.csv", List.of("Titulo", "Valoracion", "Anyo_estreno"));
         
         // Mostrar las diez primeras filas
